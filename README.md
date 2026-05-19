@@ -45,3 +45,5 @@ app.Emongent.sh/
 ├── Dockerfile                   # Container orchestration blueprint
 ├── requirements.txt             # Python dependencies
 └── README.md                    # Primary repository documentation
+pip install -r requirements.txt
+python src/main.py
