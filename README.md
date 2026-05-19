@@ -1,49 +1,44 @@
-<div align="center">
-
-[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=githubactions)](#)
-[![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)](#)
-[![Network](https://img.shields.io/badge/Network-Monad_Devnet-purple?style=for-the-badge&logo=web3dotjs)](#)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)](#)
-
 # app.Emongent.sh
 
-**Advanced Web3 Application & Execution Environment**
+[![CI Pipeline](https://img.shields.io/github/actions/workflow/status/credkellar-boop/app.Emongent.sh/ci-pipeline.yml?branch=main&label=build&style=flat-square)](https://github.com/credkellar-boop/app.Emongent.sh/actions)
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square&logo=python)](https://www.python.org/)
+[![Network](https://img.shields.io/badge/network-Monad%20Devnet-purple?style=flat-square)](https://docs.monad.xyz/)
+[![Docker](https://img.shields.io/badge/docker-ready-blue?style=flat-square&logo=docker)](https://www.docker.com/)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-</div>
+An asynchronous, high-performance Web3 multi-agent coordination hub designed for execution monitoring, autonomous strategy planning, transaction tracing, and contract interaction on EVM-compatible layers.
 
-## Overview
-`app.Emongent.sh` is a high-performance, modular application designed for seamless interaction with decentralized networks. It features an optimized architecture built to handle rapid transaction logic, sophisticated data tracing, and automated execution workflows.
+---
 
-## Directory Layout
-*   **`/src/web3_client`**: Handles RPC connections and payload generation.
-*   **`/src/engine`**: Contains the core logic and heuristics.
-*   **`/tests`**: Comprehensive test suites ensuring pipeline integrity.
+## 🏗️ Project Structure
 
-## Quick Start
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-org/app.Emongent.sh.git](https://github.com/your-org/app.Emongent.sh.git)
-   cd app.Emongent.sh
-   
+The codebase follows a modular design pattern to separate infrastructure endpoints, agent logic, and direct blockchain connectivity layers:
+
+```text
 app.Emongent.sh/
 ├── .github/
 │   └── workflows/
-│       └── ci-pipeline.yml      # CI/CD configuration for automated testing
+│       └── ci-pipeline.yml      # GitHub Actions automation pipeline
 ├── docs/
 │   └── architecture.md          # Technical documentation and system design
 ├── src/
-│   ├── api/                     # REST/GraphQL endpoints or service APIs
-│   ├── contracts/               # Smart contract ABIs and interface logic
-│   ├── engine/                  # Core execution logic (e.g., routing, tracing)
-│   ├── web3_client/             # Network interaction layer (Monad/EVM integration)
-│   └── main.py                  # Primary application entry point
-├── tests/
+│   ├── api/                     # FastAPI endpoint configuration routers
+│   │   └── __init__.py
+│   ├── contracts/               # Smart contract ABIs and interaction suites
+│   │   ├── __init__.py
+│   │   └── abi.py
+│   ├── engine/                  # Core multi-agent execution orchestrators
+│   │   ├── __init__.py
+│   │   └── agents.py
+│   ├── web3_client/             # Asynchronous JSON-RPC network client
+│   │   └── __init__.py
+│   └── main.py                  # Application initialization entry point
+├── tests/                       # Complete automated verification suite
 │   ├── conftest.py
-│   ├── test_engine.py           # Unit tests to secure the build
+│   ├── test_contracts.py
 │   └── test_web3_client.py
-├── .gitignore
-├── Dockerfile                   # Container orchestration blueprint
-├── requirements.txt             # Python dependencies
-└── README.md                    # Primary repository documentation
-pip install -r requirements.txt
-python src/main.py
+├── .env.example                 # Environment configuration blueprint
+├── .gitignore                   # Version control system exclusions
+├── Dockerfile                   # Containerized image orchestration blueprint
+├── LICENSE                      # Open-source license documentation
+└── requirements.txt             # Project library dependencies
