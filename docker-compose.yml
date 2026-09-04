@@ -1,0 +1,10 @@
+services:
+  app:
+    image: your_dockerhub_username/app-emongent:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
